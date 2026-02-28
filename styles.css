@@ -502,6 +502,26 @@ button {
     margin-right: auto;
 }
 
+.hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: var(--space-xl);
+}
+
+.hero-cta .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.hero-cta .btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
 .hero-badges {
     display: flex;
     flex-wrap: wrap;
