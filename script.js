@@ -158,6 +158,15 @@ function initForms() {
         });
     }
 
+    // Hero quote form
+    const heroQuoteForm = document.querySelector('.hero-quote-form');
+    if (heroQuoteForm) {
+        heroQuoteForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            handleFormSubmit(this, 'Request received! We\'ll respond within 1 hour.');
+        });
+    }
+
     // Contact form
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {

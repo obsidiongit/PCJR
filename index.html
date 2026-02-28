@@ -81,7 +81,7 @@
                 <p class="hero-desc">Fast, reliable, and professional junk hauling across Pinellas County. From single
                     items to full property cleanouts, we handle the heavy lifting.</p>
                 <div class="hero-cta">
-                    <a href="contact.html" class="btn btn-primary btn-lg">GET YOUR QUOTE NOW</a>
+                    <a href="#hero-name" class="btn btn-primary btn-lg">GET YOUR QUOTE NOW</a>
                     <a href="services.html" class="btn btn-secondary btn-lg">Our Services</a>
                 </div>
 
@@ -107,7 +107,70 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <img src="assets/hero-logo.png" alt="Pinellas County Junk Removal" class="hero-logo">
+                <div class="hero-form-card">
+                    <div class="form-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2L1 21h22L12 2zm0 3.45L19.15 19H4.85L12 5.45zM11 16h2v2h-2v-2zm0-7h2v5h-2V9z" />
+                        </svg>
+                        FREE ESTIMATE
+                    </div>
+                    <h2 class="form-title">Request a Quote</h2>
+                    <p class="form-subtitle">We'll respond within 1 hour</p>
+
+                    <form class="hero-quote-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="hero-name">YOUR NAME</label>
+                                <input type="text" id="hero-name" placeholder="Jane Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hero-phone">PHONE NUMBER</label>
+                                <input type="tel" id="hero-phone" placeholder="(727) 555-0000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hero-email">EMAIL ADDRESS</label>
+                            <input type="email" id="hero-email" placeholder="you@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hero-service">SERVICE NEEDED</label>
+                            <select id="hero-service" required>
+                                <option value="" disabled selected>Select a service...</option>
+                                <option value="Residential Junk Removal">Residential Junk Removal</option>
+                                <option value="Commercial Cleanouts">Commercial Cleanouts</option>
+                                <option value="Appliance Removal">Appliance Removal</option>
+                                <option value="Furniture Removal">Furniture Removal</option>
+                                <option value="Yard Waste Clean Up">Yard Waste Clean Up</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hero-desc">BRIEF DESCRIPTION (optional)</label>
+                            <textarea id="hero-desc" placeholder="e.g. Old sofa, garage clutter..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                style="width: 18px; height: 18px;">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                            </svg>
+                            GET MY FREE ESTIMATE
+                        </button>
+
+                        <p class="form-footer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                style="width: 12px; height: 12px; margin-right: 4px;">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0110 0v4"></path>
+                            </svg>
+                            No spam. Your info stays private.
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
