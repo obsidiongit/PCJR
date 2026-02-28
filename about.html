@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Pinellas County Junk Removal</title>
+    <meta name="description"
+        content="Learn about our story, our values, and why we are the best choice for your needs.">
+    <!-- Open Graph & SEO -->
+    <meta property="og:title" content="About Us | Pinellas County Junk Removal">
+    <meta property="og:description"
+        content="Learn about our story, our values, and why we are the best choice for your needs.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://www.pcjunkremoval.com/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pinellas County Junk Removal">
+    <meta property="og:locale" content="en_US">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Page Specific Styles */
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-4xl) 0 var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            /* Subtle overlay replacement */
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+
+        .stats-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-3xl) 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            text-align: center;
+        }
+
+        .stats-grid .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--white);
+        }
+
+        .stats-grid .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span class="top-bar-text">We Serve All of Pinellas County, FL</span>
+            <a href="mailto:quotes@pcjunkremoval.com" class="top-bar-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                quotes@pcjunkremoval.com
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Pinellas County Junk Removal Home">
+                <img src="assets/logo.png" alt="Pinellas County Junk Removal" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" tabindex="0">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+17275555865" class="nav-phone">
+                    <div class="phone-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </div>
+                    <span>(727) 555-5865</span>
+                </a>
+                <a href="tel:+17275555865" class="btn btn-nav-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">About Us</h1>
+            <p class="page-subtitle">Locally Owned and Operated in Pinellas County. Providing transparent pricing,
+                eco-friendly disposal, and unmatched customer service since 2018.</p>
+        </div>
+    </header>
+
+    <!-- Our Story Section -->
+    <section class="about" style="padding-bottom: 2rem;">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">More Than Just A Service</h2>
+                    <p class="about-text">Since 2018, Pinellas County Junk Removal has been tearing through clutter in
+                        our community. What started as a small operation with one truck has grown into the leading junk
+                        hauling service in the county.</p>
+                    <p class="about-text">We pride ourselves on transparent pricing, eco-friendly disposal, and
+                        unmatched customer service. If it fits in the truck, we can take it!</p>
+                </div>
+                <div class="about-visual">
+                    <img src="assets/about-image.png" alt="Our team at Pinellas County Junk Removal"
+                        style="max-width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Jobs Completed</span>
+                </div>
+                <div>
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">5-Star Reviews</span>
+                </div>
+                <div>
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Years in Business</span>
+                </div>
+                <div>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="services" style="padding-top: 4rem; padding-bottom: 4rem; background: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-desc">We believe in building lasting relationships with our clients through
+                    transparency, reliability, and outstanding results on every single job.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Same-Day Service</h3>
+                    <p class="service-desc">Need it gone fast? We offer same-day and next-day removal options in most
+                        areas so you don't have to wait.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Eco-Friendly Disposal</h3>
+                    <p class="service-desc">We recycle or donate up to 70% of the items we take, keeping them out of
+                        landfills and helping our community.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Transparent Pricing</h3>
+                    <p class="service-desc">No hidden fees. You get a clear, upfront estimate before we lift a single
+                        item. What you are quoted is what you pay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="padding: 4rem 0; background: var(--off-white);">
+        <div class="container">
+            <div
+                style="background: linear-gradient(rgba(31, 74, 106, 0.9), rgba(18, 48, 71, 0.95)), url('assets/hero-bg.png') center/cover no-repeat; color: white; padding: 4rem 3rem; border-radius: var(--radius-xl); text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                <h2 style="margin-bottom: 1rem; color: white;">Ready to Clear the Clutter?</h2>
+                <p
+                    style="margin-bottom: 2rem; opacity: 0.95; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Whether it's a single couch or an entire property cleanout, we make junk removal painless. Get your
+                    free quote today.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg"
+                        style="box-shadow: 0 4px 15px rgba(245, 130, 32, 0.4);">Get Your Free Quote</a>
+                    <a href="tel:+17275555865" class="btn btn-secondary btn-lg"
+                        style="background: transparent; color: white; border-color: white;">Call (727) 555-5865</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Pinellas County Junk Removal">
+                        <img src="assets/logo.png" alt="Pinellas County Junk Removal" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">The premier choice for fast, reliable, and professional junk removal across
+                        Pinellas County.</p>
+                    <div class="footer-certifications">
+                        <span class="certification">Fully Licensed</span>
+                        <span class="certification">Fully Insured</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Residential Junk Removal</a></li>
+                        <li><a href="services.html">Commercial Cleanouts</a></li>
+                        <li><a href="services.html">Appliance Removal</a></li>
+                        <li><a href="services.html">Furniture Removal</a></li>
+                        <li><a href="services.html">Yard Waste Clean Up</a></li>
+                        <li><a href="services.html">Construction Debris</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="tel:+17275555865">(727) 555-5865</a></p>
+                    <p><a href="mailto:quotes@pcjunkremoval.com">quotes@pcjunkremoval.com</a></p>
+                    <p>Pinellas County, FL</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pinellas County Junk Removal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

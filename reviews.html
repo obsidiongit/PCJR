@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Pinellas County Junk Removal</title>
+    <meta name="description"
+        content="See what our happy customers have to say about our services. Read genuine reviews and testimonials.">
+    <!-- Open Graph & SEO -->
+    <meta property="og:title" content="Customer Reviews | Pinellas County Junk Removal">
+    <meta property="og:description"
+        content="See what our happy customers have to say about our services. Read genuine reviews and testimonials.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://www.pcjunkremoval.com/reviews.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pinellas County Junk Removal">
+    <meta property="og:locale" content="en_US">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reviews Page Specific Styles */
+        .page-hero {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-4xl) 0 var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            /* Subtle overlay replacement */
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .featured-section {
+            padding: var(--space-4xl) 0;
+            background: var(--white);
+        }
+
+        .featured-review-large {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--space-3xl);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--light-gray);
+            position: relative;
+        }
+
+        .featured-review-large::before {
+            content: '”';
+            font-size: 8rem;
+            color: var(--primary-subtle);
+            position: absolute;
+            top: -40px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .featured-text-large {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: var(--space-xl);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .featured-author-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+        }
+
+        .featured-avatar-large {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .grid-section {
+            padding: var(--space-4xl) 0;
+            background: var(--off-white);
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-md);
+        }
+
+        .review-stars {
+            color: #FFD700;
+            letter-spacing: 2px;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: var(--mid-gray);
+        }
+
+        .review-body {
+            color: var(--dark-gray);
+            margin-bottom: var(--space-lg);
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--light-gray);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .review-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-author-name {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        .review-author-service {
+            font-size: 0.8rem;
+            color: var(--mid-gray);
+        }
+
+        .cta-banner {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: var(--space-3xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin: var(--space-4xl) auto;
+            max-width: 800px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-banner h2 {
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-banner p {
+            margin-bottom: var(--space-xl);
+            opacity: 0.9;
+        }
+
+        .cta-banner .btn {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .cta-banner .btn:hover {
+            background: var(--off-white);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span class="top-bar-text">We Serve All of Pinellas County, FL</span>
+            <a href="mailto:quotes@pcjunkremoval.com" class="top-bar-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                quotes@pcjunkremoval.com
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Pinellas County Junk Removal Home">
+                <img src="assets/logo.png" alt="Pinellas County Junk Removal" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" tabindex="0">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+17275555865" class="nav-phone">
+                    <div class="phone-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </div>
+                    <span>(727) 555-5865</span>
+                </a>
+                <a href="tel:+17275555865" class="btn btn-nav-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">Trusted by Hundreds of Happy Clients</h1>
+            <p class="page-subtitle">Don't just take our word for it. See what our customers are saying about our work.
+            </p>
+        </div>
+    </header>
+
+    <!-- Featured Review -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-review-large">
+                <div class="review-stars" style="margin-bottom: 2rem;">★★★★★</div>
+                <p class="featured-text-large">"These guys are absolute professionals! They showed up on time, cleared
+                    out my entire garage in under an hour, and their pricing was very fair. Highly recommend Pinellas
+                    County Junk Removal!"</p>
+                <div class="featured-author-large">
+                    <div class="featured-avatar-large">SM</div>
+                    <div class="review-author-info" style="text-align: left;">
+                        <span class="review-author-name" style="font-size: 1.1rem;">Sarah Mitchell</span>
+                        <span class="review-author-service">Garage Cleanout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Grid -->
+    <section class="grid-section">
+        <div class="container">
+            <div class="masonry-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">2 weeks ago</span>
+                    </div>
+                    <p class="review-body">"Fantastic service! They took care of our old appliances and yard waste
+                        without breaking a sweat."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">MD</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Mike D.</span>
+                            <span class="review-author-service">Appliance Removal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">1 month ago</span>
+                    </div>
+                    <p class="review-body">"We use them for all our commercial property cleanouts. Always reliable and
+                        easy to work with."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">DR</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">David R.</span>
+                            <span class="review-author-service">Office Cleanout</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">2 months ago</span>
+                    </div>
+                    <p class="review-body">"Very impressed with their speed and professionalism. They left the area
+                        spotless!"</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">JK</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Jennifer K.</span>
+                            <span class="review-author-service">Furniture Removal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">3 months ago</span>
+                    </div>
+                    <p class="review-body">"Absolutely fantastic service. The team was professional, on time, and
+                        completely cleared out our backyard debris. Highly recommended!"</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">TL</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Thomas L.</span>
+                            <span class="review-author-service">Yard Clean Up</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">4 months ago</span>
+                    </div>
+                    <p class="review-body">"I was amazed by how much they could fit in their truck. The crew was very
+                        polite and swept up nicely when they were finished. Fair pricing too."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">RP</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Rachel P.</span>
+                            <span class="review-author-service">Estate Cleanout</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-stars">★★★★★</div>
+                        <span class="review-date">6 months ago</span>
+                    </div>
+                    <p class="review-body">"Called them in a pinch when we were moving out and a bunch of stuff wouldn't
+                        fit in the moving truck. They came same-day and saved us a huge headache."</p>
+                    <div class="review-footer">
+                        <div class="review-avatar">BW</div>
+                        <div class="review-author-info">
+                            <span class="review-author-name">Brian W.</span>
+                            <span class="review-author-service">Residential Junk Removal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="cta-banner">
+                <h2>Have You Worked With Us?</h2>
+                <p>We'd love to hear about your experience. Your feedback helps us serve you better.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Leave a Review</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo" aria-label="Pinellas County Junk Removal">
+                        <img src="assets/logo.png" alt="Pinellas County Junk Removal" class="footer-logo-img">
+                    </a>
+                    <p class="footer-desc">The premier choice for fast, reliable, and professional junk removal across
+                        Pinellas County.</p>
+                    <div class="footer-certifications">
+                        <span class="certification">Fully Licensed</span>
+                        <span class="certification">Fully Insured</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Residential Junk Removal</a></li>
+                        <li><a href="services.html">Commercial Cleanouts</a></li>
+                        <li><a href="services.html">Appliance Removal</a></li>
+                        <li><a href="services.html">Furniture Removal</a></li>
+                        <li><a href="services.html">Yard Waste Clean Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><a href="tel:+17275555865">(727) 555-5865</a></p>
+                    <p><a href="mailto:quotes@pcjunkremoval.com">quotes@pcjunkremoval.com</a></p>
+                    <p>Pinellas County, FL</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pinellas County Junk Removal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
